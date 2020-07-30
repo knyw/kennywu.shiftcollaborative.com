@@ -28,9 +28,9 @@ if (file_exists(dirname(__FILE__)."/local.php")) {
     define( 'DB_HOST', 'localhost' );
 } else {
     // server
-    define( 'DB_NAME', '' );
-    define( 'DB_USER', '' );
-    define( 'DB_PASSWORD', '' );
+    define( 'DB_NAME', 'kennywu_wp119' );
+    define( 'DB_USER', 'kennywu_wp119' );
+    define( 'DB_PASSWORD', 'S][m9I6y5p' );
     define( 'DB_HOST', 'localhost' );
 }
 
@@ -49,14 +49,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         '.p);LO8cO#@]7eohg,w);F[DQ[m&8o8D]Zg=f}vT6WAg]rnRM6u8e@/GvKbBLy]O' );
-define( 'SECURE_AUTH_KEY',  'r|=Kt5w[HkQ0LRYJo9WX(,hba(v%[n[Bfbco[!Z(F+H.vQ%*K(4,T(;j0eZSt:q=' );
-define( 'LOGGED_IN_KEY',    'i8UU~{{69O5zvWk>4Psj%B|[Nz4B.Cf47b[>7MdP>x^$M{Y{h]ic~,_X.TRGp|0c' );
-define( 'NONCE_KEY',        'O^6Ns% !:=oU42vK9y$L6S<euEdtJ+EGgi)PDtH,g,?Z$m$pSdOdQ,3@6PyI?vAC' );
-define( 'AUTH_SALT',        'X6p(F_I]-j}@eyaCz[I-}Z}Q3~Z[oBDg%bC9rQyCMuYSoY31dW5n@V0,8N UN<=J' );
-define( 'SECURE_AUTH_SALT', 'H|&xT@MMCW-$jsQy}YMw-aveblK:^bQd}v2QOl=s($ 1(Y85R382>/|&oAC8uLNs' );
-define( 'LOGGED_IN_SALT',   'W12Ut|Tx.}8gzS7>ZfeU&m_[7/9Gy{dWk4^j0E#8E])~$TBJ9LDvBL+fx I,Puh-' );
-define( 'NONCE_SALT',       'Hhc6&Az`@.1J3Dv=aYk,sy7-m=_Zb8UWpEn$R|o&>&}Jd9+|eGgt#[e2pxy92&!2' );
+define( 'AUTH_KEY',         'vw864chamfssv1vvbyhhcbvkjeiekc6xv6qqksomiqmfdka4jfxfzj6lmmdadq3b' );
+define( 'SECURE_AUTH_KEY',  'dzrxku8dkgwapeperwrrbuible78wbpuz31sdipqcgaoxov4ehw3n5bu3gwpp7jj' );
+define( 'LOGGED_IN_KEY',    'dnixvvfczz5zcmgyuux4yb2abe6c0w4evyxcoicnqcz3own7gmdu2ppq0ld6rgkt' );
+define( 'NONCE_KEY',        'tfgjxvqyblsrkbqb4emii5sp5pci4gtxp218sqtlyzl5ysixxmwltuqnpwemibci' );
+define( 'AUTH_SALT',        'qujael0o88hfo9y4udupozjbwretzltxvfe95yyyxderbjohpepfik8nv8umrvqf' );
+define( 'SECURE_AUTH_SALT', '7aud1mppwjdj49jscml498i1juyanyovartp6azbk7a0t7qaipq8aq1kpz6xd38u' );
+define( 'LOGGED_IN_SALT',   'dampb0hqjzgo3nhrrkrsclfs0m4ex3rikggrb9ybkzc7wcbnboetxrycigaulpuo' );
+define( 'NONCE_SALT',       'llmisgrhpluqhd0dzpzn4yptcpcfre7mowpc2qvitv8x0lg9vwsc8cwghlostxph' );
 
 /**#@-*/
 
