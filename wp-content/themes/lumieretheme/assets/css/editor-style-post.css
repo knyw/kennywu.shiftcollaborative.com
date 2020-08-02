@@ -1,0 +1,22 @@
+.postInfoBox, .postBodyBox {
+    color: #31708f;
+    background-color: #d9edf7;
+    padding: 16px;
+    border: 1px solid #bce8f1;
+    border-radius: 5px;
+    display: block;
+    margin: 0 0 32px;
+}
+.postInfoText {
+    margin: 0;
+    text-align:center;
+    font-size: 14px;
+}
+.postBodyBox {
+    padding: 32px;
+}
+.postBoxyText {
+    margin:0;
+    height: 400px;
+    font-size: 16px;
+}

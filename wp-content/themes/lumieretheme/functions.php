@@ -37,6 +37,7 @@ add_action("init", "lumiereRemoveCommentMenuBar");
 function lumiereThemeSupport() {
     add_theme_support("title-tag");
     add_theme_support("post-thumbnails");
+    add_theme_support("editor-styles");
 }
 add_action("after_setup_theme", "lumiereThemeSupport");
 
@@ -67,7 +68,42 @@ function lumiereRegisterStyles() {
 }
 add_action("wp_enqueue_scripts", "lumiereRegisterStyles");
 
- 
+// Add default editor content and style
+function addDefaultEditorContent ($content, $post) {
+    $postContent = "<div id='postInfoBox' class='postInfoBox'><p class='postInfoText'><strong>Info!</strong> Please select a category and a template in Settings.</p><p class='postInfoText'>And add post text in the box below.</p><p class='postInfoText'>(this block will not be displayed in the final post)</p></div><div id='postBodyBox' class='postBodyBox'><p class='postBoxyText'></p></div>";
+    $pageContent = "";
+    $defaultContent = "This content has not been set up, please contact site admin.";
+    switch($post->post_type) {
+        case "post":
+            $content = $postContent;
+            add_editor_style(get_template_directory_uri()."/assets/css/editor-style-post.css");
+        break;
+        case "page":
+            $content = $pageContent;
+            add_editor_style(get_template_directory_uri()."/assets/css/editor-style-page.css");
+        break;
+        default:
+            $content = $defaultContent;
+        break;
+    }
+    return $content;
+}
+add_filter("default_content", "addDefaultEditorContent", 10, 2);
+
+// Remove default editor information box
+function removeInfoBoxTheContent($content) {
+    if (is_singular() && is_main_query()) {
+        // replace all single quote
+        $cleanedContent = str_replace("\'", "\"", $content);
+        // remove info box
+        $removedContent = preg_replace('/<div[^>]*id="postInfoBox" class="postInfoBox"[^>]*>.*?<\/div>/is', "", $cleanedContent);
+        // strip away aditional div
+        preg_match('/<div[^>]*id="postBodyBox" class="postBodyBox">.*?<p class="postBoxyText">(.*?)<\/p>.*?<\/div>/is', $removedContent, $outputArray);
+        return $outputArray[1];
+    }
+    return $content;
+}
+add_filter("the_content", "removeInfoBoxTheContent");
 
 
 ?>
