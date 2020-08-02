@@ -230,9 +230,17 @@ nav {
     overflow: hidden;
     float: right;
 }
-nav a {
-    position: relative;
+nav > ul {
+    margin: 0;
+}
+nav > ul > li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     float: left;
+}
+nav > ul > li > a {
+    position: relative;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
