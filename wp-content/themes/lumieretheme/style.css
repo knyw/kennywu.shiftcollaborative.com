@@ -7,3 +7,494 @@ Tags: top-menu
 Author: Kenny Wu
 Author URI: https://kennywu.shiftcollaborative.com/
 */
+
+/* Fonts */
+@font-face {
+    font-family: LibreFranklin;
+    src: url(assets/fonts/LibreFranklin-SemiBold.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: LibreFranklin;
+    src: url(assets/fonts/LibreFranklin-Bold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: LibreFranklin;
+    src: url(assets/fonts/LibreFranklin-Light.ttf);
+    font-weight: lighter;
+}
+@font-face {
+    font-family: Manuale;
+    src: url(assets/fonts/Manuale-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Manuale;
+    src: url(assets/fonts/Manuale-Bold.ttf);
+    font-weight: bold;
+}
+
+/* Default Styles */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 255, 255);
+    min-width: 320px;
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    color: #122236;
+}
+.upperText {
+    text-transform: uppercase;
+}
+.normalFontWeight {
+    font-weight: normal;
+}
+.lighterFontWeight {
+    font-weight: lighter;
+}
+h1 {
+    font-family: "Manuale", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 3.75rem;
+}
+h2 {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 2.125rem;
+}
+h3 {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.875rem;
+}
+h4 {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.625rem;
+}
+h5 {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.375rem;
+}
+h6 {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.125rem;
+}
+p {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.125rem;
+}
+a {
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 1.125rem;
+    color: #305a8f;
+}
+a:hover {
+    color: #434a52;
+}
+a:active {
+    color: #990033;
+}
+.lightText {
+    color: #f5eee4;
+}
+.blueText {
+    color: #dfebf5;
+}
+.darkText {
+    color: #122236;
+}
+button {
+    border: none;
+    font-family: "LibreFranklin", Arial, sans-serif;
+    color: #f5eee4;
+    font-weight: bold;
+    cursor: pointer;
+}
+button.primary {
+    font-size: 1.625rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+}
+button.secondary {
+    font-size: 1.25rem;
+    margin: 0.3rem 0;
+    padding: 0.3rem 1.3rem;
+}
+button.red {
+    background-color: #990033;
+}
+button.blue {
+    background-color: #122236;
+}
+button.red:hover {
+    background-color: #c20041;
+}
+button.blue:hover {
+    background-color: #305a8f;
+}
+input {
+    border: none;
+    font-family: "LibreFranklin", Arial, sans-serif;
+    font-weight: lighter;
+}
+input.primary {
+    font-size: 1.625rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+}
+input.secondary {
+    font-size: 1.25rem;
+    margin: 0.3rem 0;
+    padding: 0.3rem 1.3rem;
+}
+input.secondary::placeholder {
+    font-size: 0.9rem;
+    padding-top: 3px;
+}
+hr.redLine {
+    margin: 0;
+    border: none;
+    width: 11.5rem;
+    height: 0.25rem;
+    background-color: #990033;
+}
+hr.blueLine {
+    margin: 0;
+    border: none;
+    width: 11.5rem;
+    height: 0.25rem;
+    background-color: #dfebf5;
+}
+hr.redLine.center {
+    margin: auto;
+}
+hr.blueLine.center {
+    position: relative;
+    margin: auto;
+}
+hr.redLine.long {
+    width: 20rem;
+}
+hr.blueLine.long {
+    width: 20rem;
+}
+img {
+    display: inline-block;
+}
+.page {
+    position: relative;
+    width: 75%; 
+    height: 100%;
+    margin: auto;
+    z-index: 3;
+}
+/* Top container styles */
+header.mainHeader {
+    width: 100%;
+    height: 6rem;
+    background-color: #122236;
+}
+article {
+    position: relative;
+}
+article.mainBanner {
+    height: 38rem;
+}
+article.statement, .action {
+    height: 26rem;
+}
+/* Main Header Styles */
+.logoContainer {
+    position: absolute;
+    width: 35%;
+    height: 100%;
+}
+.headerLogo {
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+    overflow: hidden;
+    width: 100%;
+}
+.navContainer {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+}
+nav  {
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+    overflow: hidden;
+    float: right;
+}
+nav > ul {
+    margin: 0;
+}
+nav > ul > li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+nav > ul > li > a {
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    color: inherit;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+}
+nav a:hover{
+    background-color: #ddd;
+    color: black;
+}
+/* Main Banner Article Styles */
+.mainBannerHeadsBox {
+    position: absolute;
+    width: 100%;
+}
+.mainBannerHeads {
+    margin: 12% 0;
+}
+.mainBannerHead {
+    margin-bottom: 2.5rem;
+}
+.mainBannerSubHead {
+    margin-top: 2rem;
+}
+.mainBannerImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 100% 100%;
+}
+/* Statement Article Styles */
+.statementBody {
+    position: relative;
+    margin: 0 auto;
+    width: 50%;
+    height: 100%;
+    display: block;
+    float: left;
+}
+.statementBody > img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+.statementBody > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #f5eee4;
+}
+.statementBody > div > div {
+    position: absolute;
+    margin: 0 30% 0 6%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Call To Action Article Styles */
+.callToAction {
+    position: relative;
+    height: 41rem;
+}
+.call {
+    position: relative;
+    height: 15rem;
+    z-index: 5;
+}
+.call:after {
+    position: absolute;
+    content: "";
+    margin: 0 auto;
+    width: 1px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: 1.6rem solid white;
+    border-right: 1.6rem solid transparent;
+    border-left: 1.6rem solid transparent;
+    z-index: 5;
+}
+.call > .page > div {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+.call > .page > div > h5 {
+    display: inline
+}
+.action {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.actionBanner {
+    position: absolute;
+    width: 24rem;
+    height: 10rem;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center;
+    background-repeat: repeat;
+    outline: 5px solid #dfebf5;
+    outline-offset: -12px;
+}
+.actionBanner.light {
+    background-image: url("assets/images/asanoha-400px.png");
+}
+.actionBanner.dark {
+    background-image: url("assets/images/curls.png");
+}
+.actionBanner > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.actionBanner > div > div {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.actionBanner h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+.actionBanner h1 {
+    font-size: 2.6rem;
+    margin: 0;
+}
+/* Tag Link Article Styles */
+.tagBody {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: repeat;
+}
+.tagBanner {
+    padding: 3rem 0;
+    text-align: center;
+}
+.tagHead {
+    font-size: 3.5rem;
+    margin: 0 0 1.4rem;
+}
+.tagSubhead {
+    margin: 2.3rem 0;
+}
+/* Partners Article Styles */
+.partnersBox {
+    width: 100%;
+    padding: 4rem 0;
+    text-align: center;
+}
+.logoBox {
+    width: 100%;
+    margin: 2rem 0;
+}
+.logoBox > span {
+    display: inline-block;
+}
+.partnerLogo {
+    height: 5rem;
+    margin: 0.7rem 0.5rem;
+} 
+/* Footer Styles */
+footer {
+    width: 100%;
+    height: 35rem;
+}
+.footerWidgets {
+    position: relative;
+    width: 100%;
+    padding: 7rem 0;
+    background-color: #122236;
+}
+.footerWidgets .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.footerWidgets .column {
+    float: left;
+    width: 47%;
+}
+.footerWidgets .column:first-child {
+    float: left;
+}
+.footerWidgets .column:last-child {
+    float: right;
+}
+.footerLogo {
+    width: 95%;
+    margin-bottom: 2rem;
+}
+.innerRow {
+    margin-bottom: 1rem;
+}
+.innerRow > p, .innerRow > h5 {
+    margin-bottom: 1rem;
+}
+.contactInput {
+    width: 11rem;
+}
+.contactInput:last-of-type {
+    margin-right: 0.5rem;
+}
+.footerRights {
+    position: relative;
+    width: 100%;
+    height: 3.5rem;
+    background-color: black;
+}
+.footerRights p {
+    position: absolute;
+    margin: 0;
+    line-height: 3.5rem;
+}
+/* Changing Variables */
+.action.u1lt {
+    background-image: url("assets/images/Unit\ 11-B\ Large\ Transitional.jpg");
+}
+.action.u1lwe {
+    background-image: url("assets/images/Unit\ 11-B\ Large\ West\ Elm.jpg");
+}
+.action._1rr {
+    background-image: url("assets/images/10.11.17\ rooftop\ render.jpg");
+}
+.tagBody.burgundy {
+    background-image: url("assets/images/burgundy.png");
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+    .footerWidgets .column {
+        width: 100%;
+    }
+}
