@@ -658,6 +658,9 @@ footer {
     .statementBody > div > div > hr {
         margin: auto;
     }
+    .tagHead {
+        font-size: calc(100% + 1.75rem);
+    }
     .partnersBox {
         padding: 1.5rem 0;
     }
