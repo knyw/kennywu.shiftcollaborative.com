@@ -447,7 +447,6 @@ nav a:hover{
 /* Footer Styles */
 footer {
     width: 100%;
-    height: 35rem;
 }
 .footerWidgets {
     position: relative;
@@ -475,10 +474,10 @@ footer {
     margin-bottom: 2rem;
 }
 .innerRow {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
 }
 .innerRow > p, .innerRow > h5 {
-    margin-bottom: 1rem;
+    margin: 1rem 0 ;
 }
 .contactInput {
     width: 11rem;
@@ -639,6 +638,9 @@ footer {
     hr.blueLine.long {
         width: 16rem;
     }
+    article.mainBanner {
+        height: 31rem;
+    }
     article.statement {
         height: 48rem;
     }
@@ -655,6 +657,12 @@ footer {
     }
     .statementBody > div > div > hr {
         margin: auto;
+    }
+    .partnersBox {
+        padding: 1.5rem 0;
+    }
+    .footerWidgets {
+        padding: 3rem 0;
     }
 }
 
