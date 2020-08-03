@@ -49,5 +49,6 @@ $logo = wp_get_attachment_image_src($customLogoId, "full");
                 </div>
             </div>
         </footer>
+        <?php wp_footer(); ?>
     </body>
 </html>
