@@ -488,3 +488,11 @@ footer {
         width: 100%;
     }
 }
+
+
+
+/* empty page styles */
+article.emptyPage {
+    width: 100%;
+    min-height: 50rem;
+}
