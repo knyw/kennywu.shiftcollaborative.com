@@ -1,3 +1,4 @@
+/* post editor styles */
 .postInfoBox, .postBodyBox {
     color: #31708f;
     background-color: #d9edf7;
@@ -19,4 +20,7 @@
     margin:0;
     height: 400px;
     font-size: 16px;
+}
+p#hiddenAnchor_Point_Aster {
+    display: none;
 }
