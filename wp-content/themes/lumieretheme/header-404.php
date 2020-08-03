@@ -16,7 +16,7 @@ $logo = wp_get_attachment_image_src($customLogoId, "full");
     <body>
         <header class="mainHeader lightText">
             <div class="page">
-                <div class="logoContainer">
+                <div id="logoContainer">
                     <?php
                     if ( has_custom_logo() ) {
                         echo "<img class='headerLogo' src='".esc_url($logo[0])."' alt='".get_bloginfo("name")." logo'>";
@@ -25,8 +25,13 @@ $logo = wp_get_attachment_image_src($customLogoId, "full");
                     }
                     ?>
                     <!-- <img class="headerLogo" src="./images/Lumiere logo REV.png" alt="Lumiere logo"> -->
+                    <div id="navToggle">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
-                <div class="navContainer">
+                <div id="navContainer" class="">
                     <nav>
                         <?php
                             wp_nav_menu(
