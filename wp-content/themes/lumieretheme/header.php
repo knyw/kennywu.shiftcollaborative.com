@@ -46,7 +46,7 @@ $taglines = explode('|', get_bloginfo("description"));
     <body>
         <header class="mainHeader lightText">
             <div class="page">
-                <div class="logoContainer">
+                <div id="logoContainer">
                     <?php
                     if ( has_custom_logo() ) {
                         echo "<img class='headerLogo' src='".esc_url($logo[0])."' alt='".get_bloginfo("name")." logo'>";
@@ -55,8 +55,13 @@ $taglines = explode('|', get_bloginfo("description"));
                     }
                     ?>
                     <!-- <img class="headerLogo" src="./images/Lumiere logo REV.png" alt="Lumiere logo"> -->
+                    <div id="navToggle">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
-                <div class="navContainer">
+                <div id="navContainer" class="">
                     <nav>
                         <?php
                             wp_nav_menu(
