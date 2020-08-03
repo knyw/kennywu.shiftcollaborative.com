@@ -534,8 +534,14 @@ footer {
     .page {
         width: 90%;
     }
+    article.statement, .action {
+        height: 28rem;
+    }
     nav > ul > li > a {
         font-size: 0.9rem;
+    }
+    .statementBody > div > div {
+        margin: 0 18% 0 8%;
     }
 }
 @media screen and (max-width: 900px) {
@@ -544,6 +550,9 @@ footer {
     }
     header.mainHeader > .page {
         width: 100%;
+    }
+    article.statement, .action {
+        height: 32rem;
     }
     #logoContainer {
         width: 100%;
@@ -582,6 +591,9 @@ footer {
     }
     nav > ul > li > a {
         font-size: 1rem;
+    }
+    .statementBody > div > div {
+        margin: 0 15% 0 8%;
     }
     .footerWidgets .column {
         width: 100%;
