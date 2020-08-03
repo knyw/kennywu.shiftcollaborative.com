@@ -1,3 +1,4 @@
+// added nav toggle event listener
 var navToggle = document.getElementById("navToggle");
 var navContainer = document.getElementById("navContainer");
 navToggle.addEventListener("click", function () {
