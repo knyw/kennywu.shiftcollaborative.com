@@ -193,6 +193,7 @@ header.mainHeader {
     width: 100%;
     height: 6rem;
     background-color: #122236;
+    z-index: 20;
 }
 article {
     position: relative;
@@ -204,40 +205,63 @@ article.statement, .action {
     height: 26rem;
 }
 /* Main Header Styles */
-.logoContainer {
-    position: absolute;
+#logoContainer {
+    position: relative;
     width: 35%;
     height: 100%;
+    z-index: 5;
 }
 .headerLogo {
     position: relative;
-    top: 100%;
+    top: 85%;
     transform: translateY(-100%);
     overflow: hidden;
     width: 100%;
 }
-.navContainer {
+#navToggle {
+    display: none;
+    position: absolute;
+    float: right;
+    margin-right: 1.5rem;
+    right: 0;
+    bottom: 0.5rem;
+    z-index: 12;
+    cursor: pointer;
+}
+#navToggle > div {
+    width: 2rem;
+    height: 0.25rem;
+    background-color: #f5eee4;
+    margin: 4px 0;
+}
+#navContainer {
     position: absolute;
     width: 65%;
     height: 100%;
     right: 0;
     bottom: 0;
+    z-index: 4;
 }
 nav {
     position: relative;
-    top: 100%;
+    top: 90%;
     transform: translateY(-100%);
     overflow: hidden;
     float: right;
 }
 nav > ul {
     margin: 0;
+    padding: 0;
 }
 nav > ul > li {
     list-style-type: none;
     margin: 0;
     padding: 0;
     float: left;
+}
+nav > ul > li:hover {
+    background-color: #ddd;
+    color: black;
 }
 nav > ul > li > a {
     position: relative;
@@ -483,7 +507,70 @@ footer {
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 1400px) {
+    .page {
+        width: 85%;
+    }
+    #logoContainer {
+        width: 30%;
+    }
+    #navContainer {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .page {
+        width: 90%;
+    }
+    nav > ul > li > a {
+        font-size: 0.9rem;
+    }
+}
 @media screen and (max-width: 900px) {
+    header.mainHeader {
+        height: auto;
+    }
+    header.mainHeader > .page {
+        width: 100%;
+    }
+    #logoContainer {
+        width: 100%;
+        text-align: center;
+        height: 5rem;
+        background-color: #122236;
+    }
+    .headerLogo {
+        width: initial;
+    }
+    #navToggle {
+        display: block;
+    }
+    #navContainer {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color: #122236;
+        right: initial;
+        bottom: initial;
+    }
+    #navContainer.displayBlock {
+        display: block;
+    }
+    nav {
+        position: relative;
+        top: initial;
+        transform: none;
+        float: none;
+    }
+    nav > ul > li {
+        padding: 0.4rem 0 0.4rem;
+        text-align: center;
+        float: none;
+    }
+    nav > ul > li > a {
+        font-size: 1rem;
+    }
     .footerWidgets .column {
         width: 100%;
     }
@@ -494,5 +581,12 @@ footer {
 /* empty page styles */
 article.emptyPage {
     width: 100%;
-    min-height: 50rem;
+    min-height: 60rem;
+}
+/* 404 page styles */
+#lumiere_404_redirect_box {
+    text-align: center;
+}
+#lumiere_404_redirect {
+    margin: 13% auto;
 }
