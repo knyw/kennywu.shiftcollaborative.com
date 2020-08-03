@@ -506,3 +506,10 @@ article.emptyPage {
     width: 100%;
     min-height: 60rem;
 }
+/* 404 page styles */
+#lumiere_404_redirect_box {
+    text-align: center;
+}
+#lumiere_404_redirect {
+    margin: 13% auto;
+}
