@@ -70,17 +70,15 @@ add_action("wp_enqueue_scripts", "lumiereRegisterStyles");
 
 // Add default editor content and style
 function addDefaultEditorContent ($content, $post) {
-    $postContent = "<div id='postInfoBox' class='postInfoBox'><p class='postInfoText'><strong>Info!</strong> Please select a category and a template in Settings.</p><p class='postInfoText'>And add post text in the box below.</p><p class='postInfoText'>(this block will not be displayed in the final post)</p></div><div id='postBodyBox' class='postBodyBox'><p class='postBoxyText'></p></div>";
+    $postContent = "<div id='postInfoBox' class='postInfoBox'><p class='postInfoText'><strong>Info!</strong> Please select category, template and featured image in Settings.</p><p class='postInfoText'>And add post text in the box below.</p><p class='postInfoText'>(this block will not be displayed in the final post)</p></div><p id='hiddenAnchor_Point_Aster'>#</p><div id='postBodyBox' class='postBodyBox'><p class='postBoxyText'></p></div>";
     $pageContent = "";
     $defaultContent = "This content has not been set up, please contact site admin.";
     switch($post->post_type) {
         case "post":
             $content = $postContent;
-            add_editor_style(get_template_directory_uri()."/assets/css/editor-style-post.css");
         break;
         case "page":
             $content = $pageContent;
-            add_editor_style(get_template_directory_uri()."/assets/css/editor-style-page.css");
         break;
         default:
             $content = $defaultContent;
@@ -89,19 +87,40 @@ function addDefaultEditorContent ($content, $post) {
     return $content;
 }
 add_filter("default_content", "addDefaultEditorContent", 10, 2);
+add_editor_style(get_template_directory_uri()."/assets/css/editor-style.css");
+
+// Remove default editor information box at save
+function filterPostData($data, $postarr) {
+    if (($data["post_status"] == "inherit") || $data["post_status"] == "draft") {
+        return $data;
+    }
+    // replace all single quote
+    $cleanedContent = str_replace("\'", "\"", $data["post_content"]);
+    // remove info box with anchor
+    $achorIdx = strpos($cleanedContent, "#");
+    $afterAchor = substr($cleanedContent, $achorIdx + 5);
+    $data["post_content"] = $afterAchor;
+    return $data;
+}
+add_filter("wp_insert_post_data" , "filterPostData" , "11", 2);
 
 // Remove default editor information box
 function removeInfoBoxTheContent($content) {
-    if (is_singular() && is_main_query()) {
+    if (is_front_page() && is_main_query()) {
         // replace all single quote
         $cleanedContent = str_replace("\'", "\"", $content);
         // remove info box
         $removedContent = preg_replace('/<div[^>]*id="postInfoBox" class="postInfoBox"[^>]*>.*?<\/div>/is', "", $cleanedContent);
         // strip away aditional div
-        preg_match('/<div[^>]*id="postBodyBox" class="postBodyBox">.*?<p class="postBoxyText">(.*?)<\/p>.*?<\/div>/is', $removedContent, $outputArray);
+        preg_match('/<div[^>]*id="postBodyBox" class="postBodyBox">.*?<p class="postBoxyText">(.*?)<\/p>.*?<\/div>/is', $content, $outputArray);
         return $outputArray[1];
+    } elseif (is_page() && is_main_query()){
+        return $content;
+    } elseif (is_singular("post") && is_main_query()){
+
+    } else {
+        return $content;
     }
-    return $content;
 }
 add_filter("the_content", "removeInfoBoxTheContent");
 
