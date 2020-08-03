@@ -62,11 +62,19 @@ function lumiereMenus() {
 }
 add_action("init", "lumiereMenus");
 
+// register styles
 function lumiereRegisterStyles() {
     $version = wp_get_theme()->get("Version");
     wp_enqueue_style("lumiere-main-style", get_template_directory_uri()."/style.css", array(), $version, "all");
 }
 add_action("wp_enqueue_scripts", "lumiereRegisterStyles");
+
+// register scripts
+function lumiereRegisterScripts() {
+    $version = wp_get_theme()->get("Version");
+    wp_enqueue_script("lumiere-main-script", get_template_directory_uri()."/assets/js/scripts.js", array(), $version, true);
+}
+add_action("wp_enqueue_scripts", "lumiereRegisterScripts");
 
 // Add default editor content and style
 function addDefaultEditorContent ($content, $post) {
