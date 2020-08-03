@@ -103,11 +103,13 @@ function filterPostData($data, $postarr) {
         return $data;
     }
     // replace all single quote
-    $cleanedContent = str_replace("\'", "\"", $data["post_content"]);
-    // remove info box with anchor
-    $achorIdx = strpos($cleanedContent, "#");
-    $afterAchor = substr($cleanedContent, $achorIdx + 5);
-    $data["post_content"] = $afterAchor;
+    if ($data["post_type"] == "post") {
+        $cleanedContent = str_replace("\'", "\"", $data["post_content"]);
+        // remove info box with anchor
+        $achorIdx = strpos($cleanedContent, "#");
+        $afterAchor = substr($cleanedContent, $achorIdx + 5);
+        $data["post_content"] = $afterAchor;
+    }
     return $data;
 }
 add_filter("wp_insert_post_data" , "filterPostData" , "11", 2);
