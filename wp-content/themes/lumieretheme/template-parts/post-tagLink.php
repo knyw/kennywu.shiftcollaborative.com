@@ -15,7 +15,7 @@
                         <h1 class="tagHead upperText"><?php the_title() ?></h1>
                         <hr class="blueLine center">
                         <h4 class="tagSubhead lighterFontWeight"><?php the_content(); ?></h4>
-                        <button type="button" class="primary blue">Explore Availablility</button>
+                        <button type="button" class="primary blue" onclick="window.location.href='<?php echo get_permalink(get_page_by_title('Availability')->ID) ?>';">Explore Availablility</button>
                     </div>
                 </div>
             </div>

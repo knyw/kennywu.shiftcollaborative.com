@@ -103,7 +103,7 @@ $taglines = explode('|', get_bloginfo("description"));
                         </h2>
                         <hr class="blueLine long">
                         <h1 class="mainBannerSubHead upperText"><?php echo $taglines[1] ?></h1>
-                        <button type="button" class="primary red">Explore Availablility</button>
+                        <button type="button" class="primary red" onclick="window.location.href='<?php echo get_permalink(get_page_by_title('Availability')->ID) ?>';">Explore Availablility</button>
                     </div>
                 </div>
             </div>
