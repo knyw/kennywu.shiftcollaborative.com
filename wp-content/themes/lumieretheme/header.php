@@ -47,13 +47,15 @@ $taglines = explode('|', get_bloginfo("description"));
         <header class="mainHeader lightText">
             <div class="page">
                 <div id="logoContainer">
-                    <?php
-                    if ( has_custom_logo() ) {
-                        echo "<img class='headerLogo' src='".esc_url($logo[0])."' alt='".get_bloginfo("name")." logo'>";
-                    } else {
-                        echo "<h1 class='headerLogo upperText' style='margin: 0;'>".get_bloginfo("name")."</h1>";
-                    }
-                    ?>
+                    <a href="/">
+                        <?php
+                        if ( has_custom_logo() ) {
+                            echo "<img class='headerLogo' src='".esc_url($logo[0])."' alt='".get_bloginfo("name")." logo'>";
+                        } else {
+                            echo "<h1 class='headerLogo upperText' style='margin: 0;'>".get_bloginfo("name")."</h1>";
+                        }
+                        ?>
+                    </a>
                     <!-- <img class="headerLogo" src="./images/Lumiere logo REV.png" alt="Lumiere logo"> -->
                     <div id="navToggle">
                         <div></div>
