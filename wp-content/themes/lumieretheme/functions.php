@@ -142,4 +142,35 @@ function removeInfoBoxTheContent($content) {
 add_filter("the_content", "removeInfoBoxTheContent");
 
 
+/* Theme initialization steps */
+// add new categories
+function lumiereThemeCreateDefaultCategory(){
+    $categorySettings = array(
+        "cat_name" => "Home Page - Lumiere", 
+        "category_description" => "Lumiere theme category for posts in homepage",
+        "category_nicename" => "lumiere-home-page",
+        "category_parent" => ""
+    );
+    wp_insert_category($categorySettings);
+}
+add_action("admin_init", "lumiereThemeCreateDefaultCategory");
+// add new pages
+function lumiereThemeInitialize(){
+    $defaultPages = array("Home", "Overview", "Amenities", "Views", "Availability", "Downtown", "Contact");
+    foreach ($defaultPages as $singlePage) {
+        if ((get_page_by_title($singlePage) == null) || (get_page_by_title($singlePage, "ARRAY_A")["post_status"] == "trash")) {
+            $pages = array(
+                "post_type" => "page",
+                "post_title" => $singlePage,
+                "post_content" => "",
+                "post_status" => "publish",
+                "post_author" => 1
+            ); 
+            $pageId = wp_insert_post($pages);
+            // update_post_meta($homepage_id, "_wp_page_template", "your-template-filename.php");
+        }
+    }
+}
+add_action("after_setup_theme", "lumiereThemeInitialize");
+
 ?>
