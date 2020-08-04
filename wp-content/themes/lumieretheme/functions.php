@@ -177,14 +177,21 @@ function lumiereThemeInitialize(){
             $pageId = wp_insert_post($pages);
             // update_post_meta($homepage_id, "_wp_page_template", "template-filename.php");
             
-            // add page to Lumiere Main Men
-            wp_update_nav_menu_item($menuId, 0, array(
-                "menu-item-object-id" => $pageId,
-                "menu-item-object" => "page",
-                "menu-item-status" => "publish",
-                "menu-item-type" => "post_type",
-            ));
+            // add page besides Home to Lumiere Main Men
+            if ($singlePage != "Home") {
+                wp_update_nav_menu_item($menuId, 0, array(
+                    "menu-item-object-id" => $pageId,
+                    "menu-item-object" => "page",
+                    "menu-item-status" => "publish",
+                    "menu-item-type" => "post_type",
+                ));
+            }
         }
+    }
+    $homepage = get_page_by_title("Home");
+    if ($homepage) {
+        update_option("page_on_front", $homepage->ID);
+        update_option("show_on_front", "page");
     }
 }
 add_action("after_setup_theme", "lumiereThemeInitialize");
