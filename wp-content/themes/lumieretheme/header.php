@@ -68,7 +68,7 @@ $taglines = explode('|', get_bloginfo("description"));
                         <?php
                             wp_nav_menu(
                                 array(
-                                    "menu" => "primary",
+                                    "menu" => "Lumiere Main Menu",
                                     "container" => "",
                                     "theme_location" => "primary",
                                 )

@@ -38,7 +38,7 @@ $logo = wp_get_attachment_image_src($customLogoId, "full");
                         <?php
                             wp_nav_menu(
                                 array(
-                                    "menu" => "primary",
+                                    "menu" => "Lumiere Main Menu",
                                     "container" => "",
                                     "theme_location" => "primary",
                                 )
