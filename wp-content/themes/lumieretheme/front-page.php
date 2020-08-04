@@ -7,7 +7,7 @@
                 // "order" => "DESC",
                 "post_type" => "post",
                 "post_status" => "publish",
-                "category_name" => "Home Page - Lumiere",
+                "category_name" => "lumiere-home-page",
                 "suppress_filters" => true,
             );
             $posts = get_posts($args);
