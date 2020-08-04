@@ -154,8 +154,16 @@ function lumiereThemeCreateDefaultCategory(){
     wp_insert_category($categorySettings);
 }
 add_action("admin_init", "lumiereThemeCreateDefaultCategory");
-// add new pages
+// add new pages and add them to menu
 function lumiereThemeInitialize(){
+    // check if menu exist, if not -> create, else -> get Id
+    $menuName = "Lumiere Main Menu";
+    $menuExists = wp_get_nav_menu_object($menuName);
+    if (!$menuExists) {
+        $menuId = wp_create_nav_menu($menuName);
+    } else {
+        $menuId = $menuExists->term_id;
+    }
     $defaultPages = array("Home", "Overview", "Amenities", "Views", "Availability", "Downtown", "Contact");
     foreach ($defaultPages as $singlePage) {
         if ((get_page_by_title($singlePage) == null) || (get_page_by_title($singlePage, "ARRAY_A")["post_status"] == "trash")) {
@@ -167,7 +175,15 @@ function lumiereThemeInitialize(){
                 "post_author" => 1
             ); 
             $pageId = wp_insert_post($pages);
-            // update_post_meta($homepage_id, "_wp_page_template", "your-template-filename.php");
+            // update_post_meta($homepage_id, "_wp_page_template", "template-filename.php");
+            
+            // add page to Lumiere Main Men
+            wp_update_nav_menu_item($menuId, 0, array(
+                "menu-item-object-id" => $pageId,
+                "menu-item-object" => "page",
+                "menu-item-status" => "publish",
+                "menu-item-type" => "post_type",
+            ));
         }
     }
 }
