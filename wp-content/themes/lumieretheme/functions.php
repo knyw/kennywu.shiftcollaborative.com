@@ -40,6 +40,16 @@ function lumiereRemoveCommentMenuBar() {
 }
 add_action("init", "lumiereRemoveCommentMenuBar");
 
+// disable single and archive post
+function lumiereRedirects() {
+    if (is_post_type_archive("post") || is_singular("post")) {
+        status_header(404);
+        get_template_part(404);
+        exit();
+    }
+}
+add_action("template_redirect", "lumiereRedirects", 99);
+
 //
 function lumiereThemeSupport() {
     add_theme_support("title-tag");
