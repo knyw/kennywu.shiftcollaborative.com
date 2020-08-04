@@ -36,7 +36,7 @@ $logo = wp_get_attachment_image_src($customLogoId, "full");
                                 <form action="/action_page.php">
                                     <input type="text" id="name" class="secondary contactInput" name="name" placeholder="Full Name*">
                                     <input type="text" id="email" class="secondary contactInput" name="email" placeholder="Email Address*">
-                                    <button type="submit" class="secondary red">SUBMIT</button>
+                                    <button type="submit" id="contactFormSubmit" class="secondary red">SUBMIT</button>
                                 </form> 
                             </div>
                         </div>

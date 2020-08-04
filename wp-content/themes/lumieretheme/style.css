@@ -502,7 +502,7 @@ footer {
     background-color: black;
 }
 .footerRights p {
-    position: absolute;
+    position: relative;
     margin: 0;
     line-height: 3.5rem;
 }
@@ -654,6 +654,25 @@ footer {
     article.statement {
         height: 48rem;
     }
+    #logoContainer {
+        text-align: left;
+    }
+    .headerLogo {
+        margin-left: 1rem;
+    }
+    #navToggle {
+        margin-right: 1rem;
+        bottom: 1rem;
+    }
+    .mainBannerHeads {
+        text-align: center;
+    }
+    .mainBannerHeads > hr {
+        margin: auto;
+    }
+    .mainBannerSubHead {
+        margin: 1.5rem auto 1.5rem;
+    }
     .statementBody {
         width: 100%;
         height: 50%;
@@ -676,6 +695,27 @@ footer {
     }
     .footerWidgets {
         padding: 3rem 0;
+        text-align: center;
+    }
+    .contactInput:last-of-type {
+        margin-right: 0;
+    }
+    #contactFormSubmit {
+        display: block;
+        margin: auto;
+    }
+    .footerRights {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 400px) {
+    .headerLogo {
+        margin-left: 0.5rem;
+        width: 70%;
+    }
+    #navToggle {
+        margin-right: 0.5rem;
+        bottom: 0.5rem;
     }
 }
 
