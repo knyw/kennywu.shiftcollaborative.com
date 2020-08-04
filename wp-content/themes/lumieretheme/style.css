@@ -523,7 +523,7 @@ footer {
 /* Responsive Styles */
 @media screen and (max-width: 1400px) {
     .page {
-        width: 85%;
+        width: 80%;
     }
     #logoContainer {
         width: 30%;
